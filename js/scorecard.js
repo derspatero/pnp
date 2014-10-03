@@ -2,7 +2,7 @@ var course = {
 	"coursename":"Queen Elizabeth Pitch and Putt",
 	"players":["Ed","Ryan","Mike","Sam"],
 	"holes":[
-		{"hole":1,"yd":75,"par":3,"player1":0,"player2":0,"player3":0,"player4":0},
+		{"hole":1,"yd":75,"par":4,"player1":0,"player2":0,"player3":0,"player4":0},
 		{"hole":2,"yd":75,"par":3,"player1":0,"player2":0,"player3":0,"player4":0},
 		{"hole":3,"yd":75,"par":3,"player1":0,"player2":0,"player3":0,"player4":0},
 		{"hole":4,"yd":75,"par":3,"player1":0,"player2":0,"player3":0,"player4":0},
@@ -41,17 +41,20 @@ $("#frontnine").append('<tr><th>hole</th><th>yd</th><th>par</th><th>' +
 for (i=0; i<course.holes.length/2; i++) {
 
 	var scoreform = '<label for="select-native-2"></label><select name="select-native-2" id="select-native-2">';
-	scoreform += '<option value="0">0</option>';
-	scoreform += '<option value="1">1</option>';
-	scoreform += '<option value="2">2</option>';
-	scoreform += '<option value="3">3</option>';
-	scoreform += '<option value="4">4</option>';
-	scoreform += '<option value="5">5</option>';
-	scoreform += '<option value="6">6</option>';
-	scoreform += '<option value="7">7</option>';
-	scoreform += '<option value="8">8</option>';
-	scoreform += '<option value="9">9</option>';
-	scoreform += '<option value="10">10</option>';
+	for (j=0; j<=parseInt(course.holes[i].par); j++) {
+		scoreform += '<option value="' + j + '">' + j + '</option>';
+	}	
+	// scoreform += '<option value="0">0</option>';
+	// scoreform += '<option value="1">1</option>';
+	// scoreform += '<option value="2">2</option>';
+	// scoreform += '<option value="3">3</option>';
+	// scoreform += '<option value="4">4</option>';
+	// scoreform += '<option value="5">5</option>';
+	// scoreform += '<option value="6">6</option>';
+	// scoreform += '<option value="7">7</option>';
+	// scoreform += '<option value="8">8</option>';
+	// scoreform += '<option value="9">9</option>';
+	// scoreform += '<option value="10">10</option>';
 	scoreform += '</select>';
 
 	$("#frontnine").append('<tr><td>' + course.holes[i].hole + '</td><td>' + 
