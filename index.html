@@ -20,25 +20,11 @@
 <div data-role="page" id="one">
 
   <div data-role="header">
-    <h1>Multi-page</h1>
+    <h1></h1>
   </div><!-- /header -->
 
   <div role="main" class="ui-content">
 
-
-<div data-role="popup" id="popupBasic">
-  <label for="select-native-2">Native select:</label>
-  <select name="select-native-2" id="scoreselector">
-      <option class="defaultselection" value="0" selected="selected">Enter your Score</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-  </select>
-
-  </div>
 
     <table id="frontnine">
 
@@ -46,7 +32,7 @@
 
 
     <table id="frontninetotals">
-      table 2
+
     </table>
 
     <h3>Show internal pages:</h3>
@@ -55,7 +41,7 @@
   </div><!-- /content -->
 
   <div data-role="footer" data-theme="a">
-    <h4>Page Footer</h4>
+    <h4></h4>
   </div><!-- /footer -->
 </div><!-- /page one -->
 
@@ -66,20 +52,25 @@
     <h1>Two</h1>
   </div><!-- /header -->
 
+
+
   <div role="main" class="ui-content">
 
 
+
+
     <table id="backnine">
-      table 2
     </table>
 
+   <table id="backninetotals">
+    </table>
 
     <p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Back to page "one"</a></p>
 
   </div><!-- /content -->
 
   <div data-role="footer">
-    <h4>Page Footer</h4>
+    <h4></h4>
   </div><!-- /footer -->
 </div><!-- /page two -->
 
@@ -87,17 +78,31 @@
 <div data-role="page" id="popup">
 
   <div data-role="header" data-theme="b">
-    <h1>Dialog</h1>
+    <h1></h1>
   </div><!-- /header -->
 
   <div role="main" class="ui-content">
-    <h2>Popup</h2>
-    <p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p>
-    <p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Back to page "one"</a></p>
+
+    <h2>Enter your Score</h2>
+
+    <label for="select-native-2"></label>
+    <select name="select-native-2" id="scoreselector">
+<!--       <option value="1">1</option>
+      <option value="2">2</option> 
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option> 
+      <option value="6">6</option> -->
+    </select>
+
+  </div>
+
+<!--     <p>I have an id of "popup" on my page container and only look like a dialog because the link to me had a <code>data-rel="dialog"</code> attribute which gives me this inset look and a <code>data-transition="pop"</code> attribute to change the transition to pop. Without this, I'd be styled as a normal page.</p> -->
+    <p><a id="redirectbacktoscorecard" href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left scoreupdated">Done</a></p>
   </div><!-- /content -->
 
   <div data-role="footer">
-    <h4>Page Footer</h4>
+    <h4></h4>
   </div><!-- /footer -->
 </div><!-- /page popup -->
 
