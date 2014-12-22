@@ -24,7 +24,7 @@
 
   <div role="main" class="ui-content">
 
-                    <label for="text-basic">File name to write to:</label>
+<!--                     <label for="text-basic">File name to write to:</label>
                     <input id="file_name_input" type="text" name="text-basic" id="text-basic" value="">
                     <label for="text-basic">Text to write to file:</label>
                     <input id="file_text_input" type="text" name="text-basic" id="text-basic" value="">
@@ -39,7 +39,7 @@
 
                     <button id="write_to_file_btn" class="ui-btn ui-shadow" onclick="showdirectory('#file_directory','#opened_file')">Show Directory Contents</button>
 
-                    <div id="file_directory"></div>
+                    <div id="file_directory"></div> -->
  
 
     <!-- <h3>Show internal pages:</h3> -->
@@ -150,6 +150,11 @@
     $("#continuegame").click(function(){
         // alert("continue game");
         openFileFromDefaultLocation();
+    });
+
+    $("#newgame").click(function(){
+        createblankscorecard();
+        
     });
 
 

@@ -1,30 +1,4 @@
-var course = {
-	"coursename":"Pitch and Putt",
-	"players":["P1","P2","P3","P4"],
-	"holes":[
-		{"hole":1,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":2,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":3,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":4,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":5,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":6,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":7,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":8,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":9,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":10,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":11,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":12,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":13,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":14,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":15,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":16,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":17,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-		{"hole":18,"yd":75,"par":3,"playerscores":[0,0,0,0]},
-	],
-	"fronttotal":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
-	"backtotal":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
-	"total":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
-}
+var course = {}
 
 var scoreformbutton = 'href="#popup" class="ui-btn ui-shadow ui-corner-all playerscore" data-rel="dialog" data-transition="pop"';
 
@@ -33,21 +7,53 @@ var scoreid;
 var file_name = "scorecard.txt";		
 
 
+function createblankscorecard(){
+	course = {
+		"coursename":"Pitch and Putt",
+		"players":["P1","P2","P3","P4"],
+		"holes":[
+			{"hole":1,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":2,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":3,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":4,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":5,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":6,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":7,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":8,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":9,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":10,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":11,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":12,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":13,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":14,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":15,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":16,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":17,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+			{"hole":18,"yd":75,"par":3,"playerscores":[0,0,0,0]},
+		],
+		"fronttotal":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
+		"backtotal":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
+		"total":{"yd":0,"par":0,"playerscores":[0,0,0,0]},
+	}
+	createScoreCard();
+}
 
 /*
 Front 9 scorecard
 */
 
-$("h1").html(course.coursename);
-createScoreCard();
+
 
 function createScoreCard() {
+
+	$("h1").html(course.coursename);
+
 	// var player0scores;
 	// var player1scores;
 	// var player2scores;
 	// var player3scores;
 
-	alert("create score card");
+	// alert("create score card");
 
 
 	$("#frontnine").html("");
@@ -115,12 +121,14 @@ function createScoreCard() {
 	*/
 
 
-}
+/*
+START event handlers
+*/
 
 $(".playerscore").click(function () {
 	// alert("on click");
 	scoreid = $(this).attr("id");
-	// alert("scoreid: " + scoreid);
+	alert("scoreid: " + scoreid);
 
 	$("#scoreselector").html('<option value="1">1</option>' +
       '<option value="2">2</option>' + 
@@ -160,6 +168,16 @@ $("#redirectbacktoscorecard").click(function() {
     savefile();
 
 });
+
+/*
+END event handlers
+*/
+
+
+
+}
+
+
 
 function updateholescore(holeid, score){
 	$("#" + holeid).html(score);
@@ -327,7 +345,7 @@ function getFile(filename) {
                         console.log("Read as text");
                         var jsonstring = evt.target.result;
                         // alert(jsonstring);
-                        var course = JSON.parse(jsonstring);
+                        course = JSON.parse(jsonstring);
                         // $(displayId).html("File Name: " + file_name + "<hr /><p>" + evt.target.result + "</p>");
                     	alert(JSON.stringify(course));
                     	createScoreCard();
