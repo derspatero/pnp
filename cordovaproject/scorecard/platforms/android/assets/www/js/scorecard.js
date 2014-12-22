@@ -130,12 +130,12 @@ $(".playerscore").click(function () {
 	scoreid = $(this).attr("id");
 	alert("scoreid: " + scoreid);
 
-	$("#scoreselector").html('<option value="1">1</option>' +
-      '<option value="2">2</option>' + 
-      '<option value="3" selected="selected">3</option>' +
-      '<option value="4">4</option>' +
-      '<option value="5">5</option>' + 
-      '<option value="6">6</option>');
+	// $("#scoreselector").html('<option value="1">1</option>' +
+ //      '<option value="2">2</option>' + 
+ //      '<option value="3" selected="selected">3</option>' +
+ //      '<option value="4">4</option>' +
+ //      '<option value="5">5</option>' + 
+ //      '<option value="6">6</option>');
 
 	if(scoreid.split("_")[3] < 9){
 		$("#redirectbacktoscorecard").attr("href", "#one");

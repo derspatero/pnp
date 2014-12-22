@@ -128,14 +128,14 @@ START event handlers
 $(".playerscore").click(function () {
 	// alert("on click");
 	scoreid = $(this).attr("id");
-	alert("scoreid: " + scoreid);
+	// alert("scoreid: " + scoreid);
 
-	$("#scoreselector").html('<option value="1">1</option>' +
-      '<option value="2">2</option>' + 
-      '<option value="3" selected="selected">3</option>' +
-      '<option value="4">4</option>' +
-      '<option value="5">5</option>' + 
-      '<option value="6">6</option>');
+	// $("#scoreselector").html('<option value="1">1</option>' +
+ //      '<option value="2">2</option>' + 
+ //      '<option value="3" selected="selected">3</option>' +
+ //      '<option value="4">4</option>' +
+ //      '<option value="5">5</option>' + 
+ //      '<option value="6">6</option>');
 
 	if(scoreid.split("_")[3] < 9){
 		$("#redirectbacktoscorecard").attr("href", "#one");
@@ -333,7 +333,6 @@ function openFileFromDefaultLocation() {
 }
 
 function getFile(filename) {
-    // alert("getFile(" + file_name + "," + displayId + ")");
     _fileSystemRoot.getFile(
         filename, 
         null, 
@@ -346,8 +345,7 @@ function getFile(filename) {
                         var jsonstring = evt.target.result;
                         // alert(jsonstring);
                         course = JSON.parse(jsonstring);
-                        // $(displayId).html("File Name: " + file_name + "<hr /><p>" + evt.target.result + "</p>");
-                    	alert(JSON.stringify(course));
+ 	                  	// alert(JSON.stringify(course));
                     	createScoreCard();
                     };
                     reader.readAsText(file);
