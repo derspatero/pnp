@@ -130,6 +130,11 @@ $(".playerscore").click(function () {
 	scoreid = $(this).attr("id");
 	// alert("scoreid: " + scoreid);
 
+	var playernumber = scoreid.split("_")[1];
+	var holenumber = scoreid.split("_")[3];
+
+	$("#scoreelement").html("Select hole " + course.holes[holenumber].hole + " score for " + course.players[playernumber]);
+
 	// $("#scoreselector").html('<option value="1">1</option>' +
  //      '<option value="2">2</option>' + 
  //      '<option value="3" selected="selected">3</option>' +
@@ -152,6 +157,8 @@ $(".playerscore").click(function () {
 $("#redirectbacktoscorecard").click(function() {
     var score = $("#scoreselector").val(); 
 
+    // var score = $("#scoreselector :radio:checked").val();
+
     var playerindex = String(scoreid.split("_")[1]);
     var holeindex = String(scoreid.split("_")[3]);
 	// alert(scoreid + ": " + course.holes[holeindex].playerscores[playerindex]);
@@ -161,7 +168,7 @@ $("#redirectbacktoscorecard").click(function() {
 
     // alert(scoreid + ": " + course.holes[holeindex].playerscores[playerindex]);
 
-    $("#scoreselector").html("");
+    // $("#scoreselector").html("");
     updatefronttotals();
     updatebacktotals();
     updateholescore(scoreid, score);
